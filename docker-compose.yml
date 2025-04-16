@@ -1,0 +1,15 @@
+services:
+  app:
+    image: mauzzz0/wiki-js:latest
+    container_name: wiki
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "80:3000"
+    networks:
+      - wiki
+
+networks:
+  wiki:
+    external: true
